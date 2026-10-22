@@ -123,12 +123,10 @@ dialog#lock-screen{position:fixed!important;inset:0!important;width:100%!importa
 /* Specular highlight on glass surfaces */
 .card,.metric:not(.hero),.spaces,.secondary,.card-stats,.appearance-button,.install-button{background-image:var(--lg-spec),var(--lg-sheen)}
 @media(max-width:700px){aside{background-image:var(--lg-spec),var(--lg-sheen)}}
-/* Bloom: glass controls swell slightly with a springy release when pressed */
-.primary,.secondary,.spaces button,nav button,.quick-add,.appearance-button,.install-button,.lock-pad button,.quick-chips button,dialog .close{transition:transform .45s var(--lg-spring),filter .25s,background .25s,box-shadow .25s}
-.primary:active,.secondary:active,.spaces button:active,.appearance-button:active,.install-button:active,.quick-chips button:active,dialog .close:active{transform:scale(1.05);filter:brightness(1.07) saturate(1.15);transition-duration:.12s}
-nav button:active{transform:scale(1.1);transition-duration:.12s}
-.quick-add:active{transform:scale(1.12);filter:brightness(1.1) saturate(1.2);transition-duration:.12s}
-.lock-pad button:active{transform:scale(1.08);filter:brightness(1.1)}
+/* Press feedback: calm — no scaling or bounce, just a slight dim */
+button,.primary,.secondary,.spaces button,nav button,.quick-add,.appearance-button,.install-button,.lock-pad button,.quick-chips button,dialog .close{transition:filter .15s,background .25s,box-shadow .25s,opacity .25s,max-width .45s var(--lg-spring),padding .3s}
+button:active,.primary:active,.secondary:active,.spaces button:active,nav button:active,.appearance-button:active,.install-button:active,.lock-pad button:active,.quick-chips button:active,dialog .close:active{transform:none!important;filter:brightness(.94)}
+.quick-add:active{filter:brightness(.94)}
 /* Sliding glass highlight behind the selected space tab */
 .spaces{position:relative;isolation:isolate}
 .spaces button{position:relative;z-index:1}
@@ -138,11 +136,11 @@ html:root #spaces button.selected.thumbed{background:transparent!important;box-s
 /* Phone tab bar collapses to a pill showing the current tab while scrolling down */
 @media(max-width:700px){
  aside{width:calc(100vw - 100px);right:auto!important;transition:width .5s var(--lg-spring),height .5s var(--lg-spring),border-radius .4s}
- nav button{transition:transform .45s var(--lg-spring),opacity .25s,max-width .45s var(--lg-spring),padding .3s;max-width:120px}
+ nav button{max-width:120px}
  .bar-min aside{width:64px;height:58px;padding:3px}
  .bar-min nav button:not(.active){opacity:0;max-width:0;padding:0;overflow:hidden;pointer-events:none;flex:0 0 0}
  .bar-min nav button.active{font-size:0;gap:0;min-height:50px}
- .bar-min .quick-add{transform:scale(.92)}
+ 
 }
 @media(prefers-reduced-motion:reduce){*,.spaces-thumb.moving{transition:none!important}}
 @media(prefers-reduced-transparency:reduce){.card::before,.metric::before,.spaces::before,aside::before,.quick-add::before,.secondary::before{display:none}}

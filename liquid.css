@@ -112,3 +112,37 @@ dialog#lock-screen{position:fixed!important;inset:0!important;width:100%!importa
 
 /* Slightly more opaque glass on cards and tiles: blend each theme's glass 25% toward its solid version */
 .card,.metric:not(.hero){background-color:color-mix(in srgb,var(--glass),var(--glass-strong) 25%)}
+/* ===== Liquid Glass, round 2: light rims, specular highlights, bloom, morphing bars ===== */
+:root{--lg-edge:linear-gradient(140deg,#ffffff 0%,#ffffffa6 12%,#ffffff1f 34%,#ffffff00 52%,#ffffff26 74%,#ffffffb3 100%);
+ --lg-spec:radial-gradient(120% 70% at 18% -10%,#ffffffa1 0%,#ffffff2e 38%,#ffffff00 62%);--lg-spring:cubic-bezier(.34,1.56,.64,1)}
+:root[data-theme=dark]{--lg-edge:linear-gradient(140deg,#ffffff8c 0%,#ffffff40 12%,#ffffff0d 34%,#ffffff00 52%,#ffffff0d 74%,#ffffff4d 100%);
+ --lg-spec:radial-gradient(120% 70% at 18% -10%,#ffffff26 0%,#ffffff0a 38%,#ffffff00 62%)}
+/* Thin light rim drawn around the edge of each glass piece (masked gradient border) */
+.card,.metric,.spaces,.secondary,.appearance-button,.install-button,.card-stats,.quick-chips button,.lock-pad button:not(.lock-del):not(.lock-bio),nav button.active{position:relative}
+.card::before,.metric::before,.spaces::before,aside::before,.quick-add::before,.secondary::before,.appearance-button::before,.install-button::before,.card-stats::before,.lock-pad button:not(.lock-del):not(.lock-bio)::before,nav button.active::before,.spaces-thumb::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1.2px;background:var(--lg-edge);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);pointer-events:none;z-index:2}
+/* Specular highlight on glass surfaces */
+.card,.metric:not(.hero),.spaces,.secondary,.card-stats,.appearance-button,.install-button{background-image:var(--lg-spec),var(--lg-sheen)}
+@media(max-width:700px){aside{background-image:var(--lg-spec),var(--lg-sheen)}}
+/* Bloom: glass controls swell slightly with a springy release when pressed */
+.primary,.secondary,.spaces button,nav button,.quick-add,.appearance-button,.install-button,.lock-pad button,.quick-chips button,dialog .close{transition:transform .45s var(--lg-spring),filter .25s,background .25s,box-shadow .25s}
+.primary:active,.secondary:active,.spaces button:active,.appearance-button:active,.install-button:active,.quick-chips button:active,dialog .close:active{transform:scale(1.05);filter:brightness(1.07) saturate(1.15);transition-duration:.12s}
+nav button:active{transform:scale(1.1);transition-duration:.12s}
+.quick-add:active{transform:scale(1.12);filter:brightness(1.1) saturate(1.2);transition-duration:.12s}
+.lock-pad button:active{transform:scale(1.08);filter:brightness(1.1)}
+/* Sliding glass highlight behind the selected space tab */
+.spaces{position:relative;isolation:isolate}
+.spaces button{position:relative;z-index:1}
+.spaces-thumb{position:absolute;left:0;top:0;z-index:0;pointer-events:none}
+.spaces-thumb.moving{transition:transform .5s var(--lg-spring),width .5s var(--lg-spring),height .5s var(--lg-spring)}
+html:root #spaces button.selected.thumbed{background:transparent!important;box-shadow:none!important}
+/* Phone tab bar collapses to a pill showing the current tab while scrolling down */
+@media(max-width:700px){
+ aside{width:calc(100vw - 100px);right:auto!important;transition:width .5s var(--lg-spring),height .5s var(--lg-spring),border-radius .4s}
+ nav button{transition:transform .45s var(--lg-spring),opacity .25s,max-width .45s var(--lg-spring),padding .3s;max-width:120px}
+ .bar-min aside{width:64px;height:58px;padding:3px}
+ .bar-min nav button:not(.active){opacity:0;max-width:0;padding:0;overflow:hidden;pointer-events:none;flex:0 0 0}
+ .bar-min nav button.active{font-size:0;gap:0;min-height:50px}
+ .bar-min .quick-add{transform:scale(.92)}
+}
+@media(prefers-reduced-motion:reduce){*,.spaces-thumb.moving{transition:none!important}}
+@media(prefers-reduced-transparency:reduce){.card::before,.metric::before,.spaces::before,aside::before,.quick-add::before,.secondary::before{display:none}}

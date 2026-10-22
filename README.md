@@ -69,7 +69,17 @@ same-currency accounts and do not count as income or spending. Goals are separat
 Travel lets you create trips with dates, destination, budget and space. Add expenses by category,
 merchant, date and payment account. Each expense is recorded once in the main ledger.
 Trips use MVR or USD; optional original currency/price fields preserve foreign receipts.
-Enter the actual converted amount charged to your account; exchange rates are not automatic.
+Prices entered in another currency are converted automatically (see below); you can still adjust
+the amount to match what your bank actually charged.
+
+## Automatic currency conversion
+
+When adding a transaction or travel expense, open "In another currency? Convert automatically",
+enter a currency code (e.g. THB, EUR, INR) and the original price. The amount in the account or trip
+currency (MVR/USD) fills in instantly. Rates come from open.er-api.com (free, no API key), refresh
+every 6 hours while online, and are cached on the device so conversion keeps working offline.
+Before the first online load, a built-in approximate USD/MVR rate (15.42) is used. The original
+currency and amount are saved with the transaction and included in CSV exports.
 
 ## Current limits
 

@@ -90,3 +90,11 @@ dialog#lock-screen{position:fixed!important;inset:0!important;width:100%!importa
 /* iPhone Home Screen app: Faru draws behind the status bar (black-translucent), so it always
    matches Faru's own appearance. In light mode a soft shade keeps the white status icons legible. */
 @media(display-mode:standalone){:root:not([data-theme=dark]) body:after{content:'';position:fixed;left:0;right:0;top:0;height:calc(env(safe-area-inset-top) + 6px);background:linear-gradient(#10243599,#10243500);pointer-events:none;z-index:6}}
+/* Space tabs: all visible on phones without sideways scrolling */
+.sp-short{display:none}
+@media(max-width:700px){
+ .spaces{flex-wrap:wrap!important;overflow:visible!important;justify-content:space-between!important;gap:2px!important;padding:4px!important;width:100%}
+ .spaces button{flex:1 1 auto!important;min-width:0;min-height:40px!important;padding:8px 7px!important;font-size:clamp(11.5px,3.3vw,13.5px)!important;white-space:nowrap;display:flex;align-items:center;justify-content:center;flex-shrink:1!important}
+ .spaces button[data-space]{gap:5px}
+}
+@media(max-width:440px){.sp-long{display:none}.sp-short{display:inline}}

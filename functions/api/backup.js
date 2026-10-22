@@ -20,6 +20,8 @@ export async function onRequest({request,env}){
  try{
  if(request.method==='GET'){
   const id=url.searchParams.get('id');if(id){if(!/^\d{13}-[a-f0-9-]{36}\.json$/.test(id))return reply({error:'Invalid backup'},400);const obj=await env.BACKUPS.get(prefix+id);if(!obj)return reply({error:'Backup not found'},404);return new Response(obj.body,{headers:{'Content-Type':'application/json','Cache-Control':'no-store','Content-Disposition':'attachment; filename="faru-'+id+'"','X-Content-Type-Options':'nosniff'}})}
+  // Sign-in round trip: after Cloudflare Access login, send the person back into the app.
+  if(url.searchParams.has('signin'))return new Response(null,{status:302,headers:{Location:url.origin+'/#cloud-ready','Cache-Control':'no-store'}});
   const list=await env.BACKUPS.list({prefix,limit:50});return reply({backups:list.objects.map(o=>({id:o.key.slice(prefix.length),savedAt:o.uploaded,size:o.size})),more:list.truncated});
  }
  if(request.method!=='POST')return reply({error:'Method not allowed'},405);

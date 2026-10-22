@@ -1,5 +1,5 @@
 // Standalone GitHub Pages PWA. Bump VERSION whenever app assets change.
-const VERSION='2026-10-22-fx-1';
+const VERSION='2026-10-22-fx-2';
 const PREFIX='faru-pwa-'+encodeURIComponent(self.registration.scope)+'-';
 const CACHE=PREFIX+VERSION;
 const ASSETS=['./','index.html','style.css','glass.css','theme.js','currency.js','savings-travel.js','app.js','cloud-backup.js','manifest.webmanifest','icon.svg','icon-180.png','icon-192.png','icon-512.png','icon-maskable.png'];

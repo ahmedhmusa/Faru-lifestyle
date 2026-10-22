@@ -135,3 +135,11 @@ button:active,.primary:active,.secondary:active,.spaces button:active,nav button
 html:root #spaces button.selected.thumbed{background:transparent!important;box-shadow:none!important}
 @media(prefers-reduced-motion:reduce){*,.spaces-thumb.moving{transition:none!important}}
 @media(prefers-reduced-transparency:reduce){.card::before,.metric::before,.spaces::before,aside::before,.quick-add::before,.secondary::before{display:none}}
+.in-total{margin:4px 0 14px;font-size:14px}
+/* iOS-style switches for on/off options in forms */
+dialog label.lock-toggle{display:flex!important;flex-direction:row!important;align-items:center;justify-content:space-between;gap:14px;text-align:left;font-weight:500;color:var(--ink)}
+dialog label.lock-toggle input[type=checkbox]{-webkit-appearance:none;appearance:none;order:2;flex:0 0 51px;width:51px!important;height:31px!important;min-height:0!important;margin:0!important;padding:0!important;border:0!important;border-radius:999px!important;box-shadow:inset 0 0 0 1px #0000000d!important;cursor:pointer;background:#78788052 radial-gradient(circle,#fff 12.5px,#ffffff00 13.5px) no-repeat;background-size:31px 31px;background-position:left center;transition:background-position .22s ease,background-color .22s ease}
+dialog label.lock-toggle input[type=checkbox]:checked{background-color:#34c759;background-position:right center}
+[data-theme=dark] dialog label.lock-toggle input[type=checkbox]{background-color:#78788066}
+[data-theme=dark] dialog label.lock-toggle input[type=checkbox]:checked{background-color:#30d158}
+dialog label.lock-toggle input[type=checkbox]:focus-visible{outline:2px solid var(--ring);outline-offset:2px}

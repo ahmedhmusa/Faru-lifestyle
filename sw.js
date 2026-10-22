@@ -1,5 +1,5 @@
 // Offline cache for Faru Finance (GitHub Pages and Cloudflare Pages). Bump VERSION whenever app assets change.
-const VERSION='2026-10-22-glass-4';
+const VERSION='2026-10-22-total-1';
 const PREFIX='faru-pwa-'+encodeURIComponent(self.registration.scope)+'-';
 const CACHE=PREFIX+VERSION;
 // The page is cached only as './'. Cloudflare Pages redirects index.html to '/', and Safari

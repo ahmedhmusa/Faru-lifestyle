@@ -143,3 +143,16 @@ dialog label.lock-toggle input[type=checkbox]:checked{background-color:#34c759;b
 [data-theme=dark] dialog label.lock-toggle input[type=checkbox]{background-color:#78788066}
 [data-theme=dark] dialog label.lock-toggle input[type=checkbox]:checked{background-color:#30d158}
 dialog label.lock-toggle input[type=checkbox]:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
+/* Home: a balance card per currency */
+.balances{display:grid;grid-template-columns:1fr;gap:15px;margin-bottom:15px}
+.balances.two{grid-template-columns:1fr 1fr}
+.metrics.flows{grid-template-columns:repeat(3,1fr)}
+@media(max-width:700px){
+ .balances,.balances.two{grid-template-columns:1fr;gap:12px;margin-bottom:12px}
+ .balances .metric.hero,.balances .metric.hero:last-child{display:block;grid-column:auto;min-height:0;padding:22px 24px}
+ .balances .metric.hero strong,.balances .metric.hero:last-child strong{font-size:38px;margin:12px 0 8px}
+ .balances.two .metric.hero strong{font-size:34px}
+ .metrics.flows{grid-template-columns:1fr 1fr}
+}
+.balances .metric.hero:last-child strong,.balances .metric.hero:last-child label,.balances .metric.hero:last-child p{text-align:left;justify-self:auto;grid-column:auto}
+.balances .metric.hero:last-child{border-radius:27px}

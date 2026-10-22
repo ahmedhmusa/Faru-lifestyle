@@ -98,3 +98,14 @@ dialog#lock-screen{position:fixed!important;inset:0!important;width:100%!importa
  .spaces button[data-space]{gap:5px}
 }
 @media(max-width:440px){.sp-long{display:none}.sp-short{display:inline}}
+/* Light mode: space tabs with stronger colour — selected tab filled with its space colour */
+:root:not([data-theme=dark]) .spaces button{color:#3d4b5c;font-weight:500}
+:root:not([data-theme=dark]) .spaces button.selected{color:#fff!important;font-weight:600;text-shadow:0 1px 1px #0000001f}
+:root:not([data-theme=dark]) .spaces button[data-space="All spaces"].selected{background:linear-gradient(135deg,#25aaa2,#0b7f7a)!important;box-shadow:0 6px 16px #0b7f7a40,inset 0 1px 0 #ffffff70,inset 0 -1px 1px #00000020!important}
+:root:not([data-theme=dark]) .spaces button[data-space="Personal"].selected{background:linear-gradient(135deg,#3cc673,#17924b)!important;box-shadow:0 6px 16px #17924b40,inset 0 1px 0 #ffffff70,inset 0 -1px 1px #00000020!important}
+:root:not([data-theme=dark]) .spaces button[data-space="Faru Lifestyle"].selected{background:linear-gradient(135deg,#4f8ff0,#1f5fd0)!important;box-shadow:0 6px 16px #1f5fd040,inset 0 1px 0 #ffffff70,inset 0 -1px 1px #00000020!important}
+:root:not([data-theme=dark]) .spaces button[data-space="VeyruKeyolhu"].selected{background:linear-gradient(135deg,#ec5466,#c4202f)!important;box-shadow:0 6px 16px #c4202f40,inset 0 1px 0 #ffffff70,inset 0 -1px 1px #00000020!important}
+:root:not([data-theme=dark]) .spaces button[data-space="Personal"]:before{background:#1fa456!important;box-shadow:0 0 0 3px #1fa45622!important}
+:root:not([data-theme=dark]) .spaces button[data-space="Faru Lifestyle"]:before{background:#2468e0!important;box-shadow:0 0 0 3px #2468e022!important}
+:root:not([data-theme=dark]) .spaces button[data-space="VeyruKeyolhu"]:before{background:#d8283a!important;box-shadow:0 0 0 3px #d8283a22!important}
+:root:not([data-theme=dark]) .spaces button.selected:before{background:#fff!important;box-shadow:0 0 0 3px #ffffff40!important}

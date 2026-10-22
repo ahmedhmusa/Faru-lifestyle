@@ -6,14 +6,14 @@
  --lg-rim:inset 0 1px 0 #ffffffeb,inset 0 -1px 1px #ffffff59,inset 1px 0 0 #ffffff6b,inset -1px 0 0 #ffffff40;
  --lg-drop:0 10px 32px #12284614,0 1px 3px #1228460f;
  --lg-sheen:linear-gradient(165deg,#ffffff70 0%,#ffffff1a 28%,#ffffff00 55%,#ffffff14 100%);
- --lg-fill:#ffffff8c;--lg-bar:#ffffffb5;--lg-fill-strong:#ffffffc2;--lg-lens:#ffffffb8;
+ --lg-fill:#ffffff9e;--lg-bar:#ffffffc4;--lg-fill-strong:#ffffffcf;--lg-lens:#ffffffb8;
 }
 :root[data-theme=dark]{
  --lg-blur:blur(26px) saturate(170%) brightness(.92);
  --lg-rim:inset 0 1px 0 #ffffff38,inset 0 -1px 1px #ffffff12,inset 1px 0 0 #ffffff1c,inset -1px 0 0 #ffffff12;
  --lg-drop:0 14px 40px #0000004d,0 1px 3px #00000033;
  --lg-sheen:linear-gradient(165deg,#ffffff1f 0%,#ffffff08 30%,#ffffff00 55%,#ffffff0a 100%);
- --lg-fill:#1c263a8c;--lg-bar:#18213ac4;--lg-fill-strong:#1a2436d1;--lg-lens:#ffffff1f;
+ --lg-fill:#1c263a9e;--lg-bar:#18213ad1;--lg-fill-strong:#1a2436db;--lg-lens:#ffffff1f;
 }
 /* Glass surfaces */
 .card,.metric:not(.hero){background-image:var(--lg-sheen);box-shadow:var(--lg-drop),var(--lg-rim);border-color:transparent;backdrop-filter:var(--lg-blur);-webkit-backdrop-filter:var(--lg-blur)}
@@ -109,3 +109,6 @@ dialog#lock-screen{position:fixed!important;inset:0!important;width:100%!importa
 :root:not([data-theme=dark]) .spaces button[data-space="Faru Lifestyle"]:before{background:#2468e0!important;box-shadow:0 0 0 3px #2468e022!important}
 :root:not([data-theme=dark]) .spaces button[data-space="VeyruKeyolhu"]:before{background:#d8283a!important;box-shadow:0 0 0 3px #d8283a22!important}
 :root:not([data-theme=dark]) .spaces button.selected:before{background:#fff!important;box-shadow:0 0 0 3px #ffffff40!important}
+
+/* Slightly more opaque glass on cards and tiles: blend each theme's glass 25% toward its solid version */
+.card,.metric:not(.hero){background-color:color-mix(in srgb,var(--glass),var(--glass-strong) 25%)}

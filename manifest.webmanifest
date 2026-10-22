@@ -39,16 +39,52 @@
   ],
   "shortcuts": [
     {
-      "name": "Savings",
-      "url": "./#savings"
+      "name": "Add expense",
+      "short_name": "Expense",
+      "url": "./?quick=expense",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
     },
     {
-      "name": "Travel",
-      "url": "./#travel"
+      "name": "Add income",
+      "short_name": "Income",
+      "url": "./?quick=income",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
     },
     {
-      "name": "Add / view transactions",
-      "url": "./#transactions"
+      "name": "Trip expense",
+      "short_name": "Trip",
+      "url": "./?quick=trip",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Transfer",
+      "short_name": "Transfer",
+      "url": "./?quick=transfer",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
     }
   ]
 }

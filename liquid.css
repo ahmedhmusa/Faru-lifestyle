@@ -58,3 +58,4 @@ dialog .primary{width:100%;min-height:52px}
 /* Accessibility: solid surfaces when transparency is reduced or blur unsupported */
 @media(prefers-reduced-transparency:reduce){.secondary,.spaces,.filters select,.filters input,.search,.appearance-button,.install-button,dialog .close,aside,dialog{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--glass-strong)}}
 @supports not (backdrop-filter:blur(1px)){.spaces,aside,dialog,.quick-add{background-color:var(--glass-strong)}}
+.card-glyph{display:inline-flex;vertical-align:-5px;margin-right:8px;color:var(--teal)}.credit-card .account-value small{font-size:13px;color:var(--muted);margin-right:4px}.credit-card .card-label{margin:12px 0 0}

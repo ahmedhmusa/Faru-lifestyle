@@ -49,7 +49,7 @@ The update notice does not force a reload or interrupt an open form.
 4. Select the saved JSON file and confirm replacement of the new app's records.
 5. Check account balances and trips. Export regular backups from your new installation.
 
-The ZIP contains app code, not your personal transactions.
+The ZIP contains app code and optional demo data, not your personal transactions.
 A different website address or browser has separate records. There is no automatic sync.
 The package namespaces its records by site path, keeping separate GitHub project apps apart.
 

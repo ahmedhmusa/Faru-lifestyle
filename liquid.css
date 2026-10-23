@@ -178,3 +178,9 @@ dialog label.lock-toggle input[type=checkbox]:focus-visible{outline:2px solid va
 .cat-name small{display:block;font-size:11.5px;color:var(--muted);font-weight:400;margin-top:2px}
 .merch-add{margin:6px 0 4px}.merch-add>input{width:100%}.merch-add .cat-new{margin-top:8px}.merch-add select,.merch-edit select{flex:1;min-width:0}
 .merch-edit{flex:1;display:flex;flex-direction:column;gap:0}.merch-edit input{width:100%}
+/* Hidden balances on Home */
+.bal-card{cursor:pointer;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+.bal-card label{display:flex;justify-content:space-between;align-items:center}
+.bal-eye{display:inline-flex;opacity:.8}
+.bal-dots{letter-spacing:4px;font-size:.8em;vertical-align:.08em}
+.bal-card.masked p{opacity:.85}

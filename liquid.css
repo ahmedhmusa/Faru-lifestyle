@@ -164,3 +164,11 @@ dialog label.lock-toggle input[type=checkbox]:focus-visible{outline:2px solid va
 .cat-rename{flex:1;margin:0}
 .cat-new[hidden],#cat-field[hidden]{display:none!important}
 .cat-new .secondary{width:auto;min-height:44px;padding:0 18px;flex:0 0 auto}
+/* Transaction details + related filters */
+.tx-row{cursor:pointer}.tx-row:active td{background:var(--well)}
+.tx-detail{text-align:center;margin-bottom:16px}.tx-detail-amt{font-size:34px;font-weight:700;letter-spacing:-1px;margin:4px 0 6px}.tx-detail-amt small{font-size:13px;color:var(--muted);font-weight:500}
+.tx-detail-amt.expense{color:var(--orange)}.tx-detail-amt.income{color:var(--on-green)}.tx-detail b{display:block;font-size:17px}.tx-detail .hint{margin:4px 0 12px}.tx-detail .secondary{width:100%}
+.rel-tabs button{display:flex;flex-direction:column;align-items:center;gap:1px;line-height:1.2}.rel-tabs button small{font-size:11px;color:var(--muted);font-weight:400;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rel-tabs button:disabled{opacity:.4}
+.rel-stats{margin:10px 0 8px}.rel-amt{display:block}.rel-amt small{display:inline!important;font-size:10px}.rel-stats .cstat p{font-size:10.5px}.rel-stats .cstat p .rel-amt{display:inline}
+.rel-list .ledger-row strong small{font-size:10px;color:var(--muted);font-weight:500}
+.rel-current{background:var(--well);border-radius:16px}

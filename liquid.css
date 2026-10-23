@@ -156,3 +156,11 @@ dialog label.lock-toggle input[type=checkbox]:focus-visible{outline:2px solid va
 }
 .balances .metric.hero:last-child strong,.balances .metric.hero:last-child label,.balances .metric.hero:last-child p{text-align:left;justify-self:auto;grid-column:auto}
 .balances .metric.hero:last-child{border-radius:27px}
+/* Categories */
+.cat-new{display:flex;gap:8px;align-items:center;margin:8px 0 12px}.cat-new input{flex:1;min-width:0}.cat-new .primary{width:auto!important;min-height:44px!important;padding:0 18px;flex:0 0 auto}
+.cat-manage{display:block;margin:-6px 0 12px;font-size:13px}
+.cat-tabs{display:flex;gap:4px;padding:4px;border-radius:999px;background:var(--lg-fill);box-shadow:var(--lg-rim);margin-bottom:14px}.cat-tabs button{flex:1;border:0;border-radius:999px;padding:10px;background:none;color:var(--muted);font-weight:500}.cat-tabs button.selected{background:var(--lg-fill-strong);color:var(--ink);box-shadow:var(--lg-drop),var(--lg-rim)}
+.cat-list{margin:6px 0 10px}.cat-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 2px;border-bottom:1px solid var(--line);min-height:52px}.cat-name{font-weight:500;min-width:0;overflow-wrap:anywhere}.cat-actions{display:flex;gap:12px;flex-shrink:0}.cat-actions button{font-size:13px}.cat-actions button:disabled{opacity:.25}
+.cat-rename{flex:1;margin:0}
+.cat-new[hidden],#cat-field[hidden]{display:none!important}
+.cat-new .secondary{width:auto;min-height:44px;padding:0 18px;flex:0 0 auto}

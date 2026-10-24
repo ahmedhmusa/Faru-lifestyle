@@ -197,3 +197,18 @@ dialog label.lock-toggle input[type=checkbox]:focus-visible{outline:2px solid va
 .sd-back{margin:-8px 0 6px;font-size:13px}
 .sd-mrow{display:grid;grid-template-columns:minmax(0,1.2fr) 1fr auto;align-items:center;gap:10px;padding:8px 0;font-size:13px}.sd-mrow span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.sd-mrow .sd-bar{margin:0}
 .sd-donut .donut-center,.sd-donut .donut-center small{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif}
+/* Credit card details */
+.cc-visual{position:relative;border-radius:24px;padding:20px 22px 18px;color:#fff;background:linear-gradient(135deg,#2a3346,#151b29 60%,#0e1320);box-shadow:0 16px 40px #0d203a40,inset 0 1px 0 #ffffff40,inset 0 -1px 1px #ffffff14;overflow:hidden;margin-bottom:14px}
+.cc-visual:before{content:'';position:absolute;width:260px;height:260px;right:-90px;top:-120px;border-radius:50%;background:radial-gradient(circle,#ffffff2e,#ffffff00 65%)}
+[data-space=personal] .cc-visual{background:linear-gradient(135deg,#2e7d52,#14402b 65%,#0e2a1d)}
+[data-space=faru] .cc-visual{background:linear-gradient(135deg,#2f6fde,#173b80 65%,#0f2552)}
+[data-space=veyru] .cc-visual{background:linear-gradient(135deg,#c4202f,#6d1520 65%,#3e0d14)}
+.cc-top{display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:15px;position:relative}.cc-chip{opacity:.85;display:inline-flex}
+.cc-owed-label{margin-top:22px;font-size:12px;opacity:.75}.cc-owed{font-size:36px;font-weight:700;letter-spacing:-1px;position:relative}.cc-owed small{font-size:13px;font-weight:500;opacity:.8}
+.cc-meter{height:7px;border-radius:9px;background:#ffffff2e;margin:14px 0 8px;overflow:hidden}.cc-meter span{display:block;height:100%;border-radius:9px;background:linear-gradient(90deg,#ffffff,#ffffffcc)}
+.cc-foot{display:flex;justify-content:space-between;font-size:12px;opacity:.85;gap:8px}
+.cc-actions{margin:0 0 14px}.cc-actions .primary,.cc-actions .secondary{flex:1}
+.cc-health{font-weight:600}.cc-health.good{color:var(--on-green)}.cc-health.ok{color:#c58a1a}.cc-health.high{color:var(--orange)}
+.cc-cat{cursor:default}
+.cc-day{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin:16px 2px 4px}
+.cc-edit{display:block;margin:16px auto 0;font-size:13px}
